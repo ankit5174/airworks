@@ -14,10 +14,11 @@ Flight search functionality.
 
 # Data Setup
 
-Route available are 
-    Raipur To Delhi on 28-05-2018
-    Delhi To Raipur on 29-05-2018
-    Any other pairs on any other date will result to no flights found
+Route available are  
+
+    1. Raipur To Delhi on 28-05-2018
+    2. Delhi To Raipur on 29-05-2018
+    3. Any other pairs on any other date will result to no flights found
          
                
 # Test Cases
@@ -27,6 +28,7 @@ npm test
 # Demo Video
 
 web: https://youtu.be/U_tB7NC66yY
+
 mobile: https://youtu.be/UMEcUKoPOaI
                 
     
