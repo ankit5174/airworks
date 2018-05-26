@@ -1,0 +1,120 @@
+.jumbotron {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: url("../../resources/background.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -10;
+    color: white;
+}
+
+.jumbotron::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(20, 20, 20, .5);
+    z-index: -11;
+}
+
+.home-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-top: 100px;
+}
+
+.heading {
+    margin: 25px;
+    display: inline-block;
+}
+
+.form-group {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group > div {
+    width: 100%;
+}
+
+.form-group > div > input {
+    background: none;
+    height: 54px;
+    padding-left: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+.form-group > div > input:focus {
+    color: #fff ;
+    outline: none;
+}
+
+.button-submit {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    color: #565656;
+    height: 54px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.button-row {
+    display: flex;
+    float: right;
+}
+
+.button-container {
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+::-webkit-input-placeholder {
+    color: white;
+    font-size: 13px;
+}
+
+::-moz-placeholder {
+    color: white;
+    font-size: 13px;
+}
+
+:-ms-input-placeholder {
+    color: white;
+    font-size: 13px;
+}
+
+::placeholder {
+    color: white;
+    font-size: 13px;
+}
+
+@media (max-height: 500px) {
+    .jumbotron {
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .jumbotron {
+        height: auto;
+    }
+}
