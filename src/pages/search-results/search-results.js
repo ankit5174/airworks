@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SideNavBar from '../../components/side-nav-bar/side-nav-bar';
 import './search-results.css';
-import airasia from '../../resources/airasia.png'
 import {getAirlineLogo, getAirportCode} from "../../util/util";
 
 export default class SearchResults extends React.Component {
@@ -33,9 +32,9 @@ export default class SearchResults extends React.Component {
         this.setState({sliderMaxPrice: Number(sliderVal)})
     }
 
-    getSearchCard(airlines, departure, from, to, arrival, price) {
+    getSearchCard(index, airlines, departure, from, to, arrival, price) {
         return (
-            <div className="card">
+            <div key={index} className="card">
                 <div className="col-3 col-s-3 logo">
                     <img src={getAirlineLogo(airlines)}/>
                 </div>
@@ -97,8 +96,8 @@ export default class SearchResults extends React.Component {
                                 </div>
                             </div>
 
-                            {departFlights.map(flight => {
-                                return flight.price <= this.state.sliderMaxPrice && this.getSearchCard(flight.airlines, flight.departTime, flight.from, flight.to, flight.arrivalTime, flight.price);
+                            {departFlights.map((flight, index) => {
+                                return flight.price <= this.state.sliderMaxPrice && this.getSearchCard(index, flight.airlines, flight.departTime, flight.from, flight.to, flight.arrivalTime, flight.price);
                             })}
                         </div>
 
@@ -121,8 +120,8 @@ export default class SearchResults extends React.Component {
                                 </div>
                             </div>
 
-                            {returnFlights.map(flight => {
-                                return flight.price <= this.state.sliderMaxPrice && this.getSearchCard(flight.airlines, flight.departTime, flight.from, flight.to, flight.arrivalTime, flight.price);
+                            {returnFlights.map((flight, index) => {
+                                return flight.price <= this.state.sliderMaxPrice && this.getSearchCard(index, flight.airlines, flight.departTime, flight.from, flight.to, flight.arrivalTime, flight.price);
                             })}
                         </div>
                         }

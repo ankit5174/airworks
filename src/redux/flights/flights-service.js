@@ -2,7 +2,6 @@ import {flights} from "../../util/db-util";
 import {searchFlightsSuccess} from "./flights-action";
 
 export const getFlights = (store, searchQuery) => {
-    console.log(searchQuery);
     //mocking service/api call where we query the db
     let maxPrice = Number.NEGATIVE_INFINITY;
     let departFlights = [];
@@ -34,7 +33,7 @@ export const getFlights = (store, searchQuery) => {
         maxPrice,
         searchQuery
     };
-    console.log('p', payload)
+
     store.dispatch(searchFlightsSuccess(payload));
 };
 

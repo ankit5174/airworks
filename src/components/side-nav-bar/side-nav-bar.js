@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './side-nav-bar.css';
 import Autocomplete from 'react-autocomplete';
-import {Calendar} from 'react-date-range';
 import {getDisplayAirports, validateForm} from "../../util/util";
 import {airports} from "../../util/db-util";
 
@@ -43,7 +42,6 @@ export default class SideNavBar extends Component {
                 passenger: target.passenger.value,
                 roundTrip: this.state.roundTrip
             };
-            console.log(searchQuery)
             this.props.searchFlights(searchQuery);
         } else {
             this.setState({valid: false});
@@ -134,7 +132,7 @@ export default class SideNavBar extends Component {
 
                         <div className="slidecontainer">
                             <p>Price</p>
-                            <input type="range" min="1" max={maxPrice} className="slider" id="myRange"
+                            <input ref="priceSlider" type="range" min="1" max={maxPrice} className="slider" id="myRange"
                                    onChange={(e)=>{updateSliderMaxPrice(e.target.value)}}
                                    value={sliderMaxPrice}
                             />
